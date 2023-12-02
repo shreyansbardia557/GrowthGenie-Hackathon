@@ -64,7 +64,7 @@ def stock_manipulations(stocks1):
     fixed_vol1 = fixed_vol1.drop(['CLIENTCOUNT', 'STOCKID'], axis=1)
     fixed_vol1 = fixed_vol1.rename(columns={'STOCKNAME': 'Stock Name', 'RETURNS': 'CAGR'})
     fixed_vol1 = fixed_vol1.drop_duplicates(subset = ['Stock Name'])
-    fixed_vol1 = fixed_vol1.reset_index()
+    fixed_vol1 = fixed_vol1.reset_index(drop = True)
     first_10_entries = fixed_vol1.take([i for i in range(10)])
     return first_10_entries
 
